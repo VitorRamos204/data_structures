@@ -57,11 +57,15 @@ class LinkedList:
         raise ValueError(f'{elem} is not in list')
 
     def insert(self, index, elem):
+        node = Node(elem)
         if index == 0:
-            node = Node(elem)
             node.next = self.head
             self.head = node
         else:
             pointer = self._getnode(index-1)
-            node = Node(elem)
+            node.next = pointer.next
             pointer.next = node
+        self._size = self._size + 1
+
+
+lista = LinkedList()
