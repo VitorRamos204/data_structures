@@ -72,6 +72,7 @@ class LinkedList:
             raise ValueError(f"{elem} is not in list")
         elif self.head.data == elem:
             self.head = self.head.next
+            self._size = self._size + 1
         else:
             ancestor = self.head
             pointer = self.head.next
@@ -81,9 +82,22 @@ class LinkedList:
                     pointer.next = None
                 ancestor = pointer
                 pointer = pointer.next
+            self._size = self._size - 1
             return True
         raise ValueError(f"{elem} is not in list")
+
+    def __repr__(self):
+        r = ""
+        pointer = self.head
+        while(pointer):
+            r = r + str(pointer.data) + "->"
+            pointer = pointer.next
+        return r
+
+    def __str__(self):
+        return self.__repr__()
 
 
 if __name__ == '__main__':
     lista = LinkedList()
+
