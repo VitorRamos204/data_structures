@@ -51,4 +51,3 @@ class Queue:
 
 if __name__ == '__main__':
     lista = Queue()
-
