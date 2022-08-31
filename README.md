@@ -1,1 +1,1 @@
-# Repository for data structure learning
+# Repository for data structure learning with Python
